@@ -1,0 +1,11 @@
+flask
+ultralytics
+opencv-python
+numpy
+pillow
+matplotlib
+lxml
+pandas
+seaborn
+torch
+torchvision

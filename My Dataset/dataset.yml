@@ -1,0 +1,10 @@
+path: D:/pothole-detection-system-using-convolution-neural-networks-master/My Dataset
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: minor_pothole
+  1: medium_pothole
+  2: major_pothole

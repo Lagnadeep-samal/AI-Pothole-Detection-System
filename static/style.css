@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f7fc;
+    color: #222;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("/static/bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 40px;
+}
+
+.hero-content {
+
+    width: 100%;
+    max-width: 1200px;
+
+    color: white;
+}
+
+.hero h1 {
+
+    font-size: clamp(55px, 8vw, 95px);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.subtitle {
+
+    font-size: 22px;
+
+    color: #dbeafe;
+
+    margin-bottom: 25px;
+
+    letter-spacing: 1px;
+
+    font-weight: 500;
+}
+
+.hero p {
+
+    font-size: 24px;
+
+    margin-bottom: 40px;
+
+    opacity: .95;
+}
+
+/* ================= UPLOAD SECTION ================= */
+
+.upload-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.preview-box {
+
+    width: 450px;
+
+    height: 260px;
+
+    background: rgba(255, 255, 255, .95);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .25);
+}
+
+.preview-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+}
+
+#placeholder {
+
+    color: #888;
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+input[type="file"] {
+
+    width: 450px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: none;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .15);
+}
+
+/* ================= BUTTON ================= */
+
+button {
+
+    padding: 18px 55px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #3b82f6
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, .4);
+}
+
+button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 40px rgba(37, 99, 235, .55);
+}
+
+/* ================= RESULTS ================= */
+
+.result-section {
+
+    padding: 70px 20px;
+
+    text-align: center;
+}
+
+.result-section h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 30px;
+}
+
+/* ================= CARDS ================= */
+
+.results {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    margin-top: 40px;
+}
+
+.card {
+
+    width: 260px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .15);
+
+    transition: .3s;
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+}
+
+.card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.card h2 {
+
+    font-size: 45px;
+}
+
+/* Minor */
+
+.minor-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+}
+
+/* Medium */
+
+.medium-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #facc15,
+            #eab308
+        );
+}
+
+/* Major */
+
+.major-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+}
+
+/* ================= SCORE CARD ================= */
+
+.score-card {
+
+    width: 650px;
+
+    margin: 50px auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .1);
+}
+
+.score-card h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.score-card h3 {
+
+    font-size: 28px;
+
+    color: #2563eb;
+}
+
+/* ================= LEGEND ================= */
+
+.legend {
+
+    margin: 50px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    width: fit-content;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .1);
+}
+
+.legend h3 {
+
+    margin-bottom: 20px;
+
+    font-size: 24px;
+}
+
+.legend-container {
+
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.legend-box {
+
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 6px;
+}
+
+.green {
+
+    background: #22c55e;
+}
+
+.yellow {
+
+    background: #facc15;
+}
+
+.red {
+
+    background: #ef4444;
+}
+
+/* ================= IMAGE CARD ================= */
+
+.image-card {
+
+    width: 90%;
+
+    margin: 50px auto;
+
+    text-align: center;
+}
+
+.image-card h2 {
+
+    margin-bottom: 20px;
+}
+
+.image-card img {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .2);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .hero h1 {
+
+        font-size: 50px;
+    }
+
+    .subtitle {
+
+        font-size: 18px;
+    }
+
+    .hero p {
+
+        font-size: 18px;
+    }
+
+    .preview-box {
+
+        width: 90%;
+
+        max-width: 450px;
+
+        height: 220px;
+    }
+
+    input[type="file"] {
+
+        width: 90%;
+    }
+
+    .results {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .card {
+
+        width: 90%;
+    }
+
+    .score-card {
+
+        width: 90%;
+    }
+
+    .legend-container {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .image-card img {
+
+        width: 100%;
+    }
+}

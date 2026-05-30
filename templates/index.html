@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Pothole Detection System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <h1>🚧 AI Pothole Detection System</h1>
+
+            <p>
+                Upload a road image and detect potholes with severity analysis
+            </p>
+
+            <form action="/predict"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <div class="upload-container">
+
+                    <div class="preview-box">
+
+                        <img id="previewImage"
+                             src=""
+                             alt="Preview">
+
+                        <div id="placeholder">
+                            Upload Image Preview
+                        </div>
+
+                    </div>
+
+                    <input
+                        type="file"
+                        name="image"
+                        id="imageInput"
+                        accept="image/*"
+                        required>
+
+                    <button type="submit">
+                        Detect Now
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ================= RESULTS ================= -->
+
+    {% if image %}
+
+    <section class="result-section">
+
+        <h2>Detection Results</h2>
+
+        <!-- Cards -->
+
+        <div class="results">
+
+            <div class="card minor-card">
+                <h3>🟢 Minor</h3>
+                <h2>{{ minor }}</h2>
+            </div>
+
+            <div class="card medium-card">
+                <h3>🟡 Medium</h3>
+                <h2>{{ medium }}</h2>
+            </div>
+
+            <div class="card major-card">
+                <h3>🔴 Major</h3>
+                <h2>{{ major }}</h2>
+            </div>
+
+        </div>
+
+        <!-- Road Score -->
+
+        <div class="score-card">
+
+            <h2>
+                Road Score : {{ road_score }}
+            </h2>
+
+            <h3>
+                Condition : {{ road_condition }}
+            </h3>
+
+        </div>
+
+        <!-- Color Identification -->
+
+        <div class="legend">
+
+            <h3>Color Identification</h3>
+
+            <div class="legend-container">
+
+                <div class="legend-item">
+                    <span class="legend-box green"></span>
+                    Minor Pothole
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-box yellow"></span>
+                    Medium Pothole
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-box red"></span>
+                    Major Pothole
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Detected Image -->
+
+        <div class="image-card">
+
+            <h2>Detected Image</h2>
+
+            <img
+                src="{{ url_for('static', filename=image) }}"
+                alt="Detected Potholes">
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+    <!-- ================= IMAGE PREVIEW SCRIPT ================= -->
+
+    <script>
+
+        const imageInput =
+            document.getElementById("imageInput");
+
+        const previewImage =
+            document.getElementById("previewImage");
+
+        const placeholder =
+            document.getElementById("placeholder");
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                const file = this.files[0];
+
+                if (file) {
+
+                    previewImage.src =
+                        URL.createObjectURL(file);
+
+                    previewImage.style.display =
+                        "block";
+
+                    placeholder.style.display =
+                        "none";
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
