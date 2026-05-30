@@ -225,7 +225,7 @@ The uploaded road image is processed using YOLOv8 and potholes are highlighted u
 ![Detection Output](images_demo/project_demo_3.png)
 ### Road Condition Analysis
 
-![Road Analysis](images_demo/project_demo_4.png(2))
+![Road Analysis](images_demo/project_demo_3.png(2))
 ## Future Improvements
 
 * Real-time pothole detection using video streams.
